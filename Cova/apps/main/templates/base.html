@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> C O V A </title>
+	{% load static from staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+	<header class="cabecera">
+		<div class="container">		
+			<div class="row row__space__between">
+				<div class="logo"> C O V A 	</div>	
+
+				{% if not user.is_authenticated %}
+			    <ul class="menu">
+			    	<li class="menu__item"><a href="{% url 'users:login' %}">Login</a></li>
+			      	<li class="menu__item"><a href="{% url 'users:register' %}">Registrarse</a></li>
+			    </ul>
+				{% else %}
+
+			    <ul class="menu">
+			    	<li class="menu__item_bienvenida"><a>Bienvenido, {{user.username}}</a></li>
+			      	<li class="menu__item"><a href="{% url 'users:logout' %}">Salir</a></li>
+			    </ul>
+
+			    {% endif %}
+
+			</div>
+		</div>	
+    </header>
+<!-- 	<div class="container">
+		<div class="row session">
+			{% if user.is_authenticated %}
+					<h4>Bienvenido, {{user.username}}</h4>
+					<a class ="boton_salir" href="{% url 'users:logout' %}">Salir</a>
+			{% endif %}
+			{% if not user.is_authenticated %}
+					<h4>Sesión no iniciada</h4>
+					
+			{% endif %}
+		</div>
+	</div> -->
+
+    {% block content %}
+    {% endblock content %}
+
+   	<footer class="footer">
+    	<div class="contenedor">
+        	<hr class="footer__linea">
+        	<span class="footer__texto"> Juan Yagüe Saldaña</span>
+      	</div>
+    </footer>
+
+</body>
+</html>
+
+
+
+

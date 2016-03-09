@@ -3,7 +3,7 @@ from .base import *
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'covadb',
+        'NAME': 'db_cova',
         'USER': 'admin',
         'PASSWORD': 'admin',
         'HOST': 'localhost',

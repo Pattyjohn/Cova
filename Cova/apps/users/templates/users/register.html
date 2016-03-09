@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="contenedor">
+
+		<h2 class="login__registro">
+			Registro de usuarios
+		</h2>
+		<section class="login__registro__datos">
+			<form method="POST"> 
+				{% csrf_token %}
+				<div class="login__registro__datos__ingresar">
+					
+					{{ form.username }}
+					{{ form.username.errors }}
+				</div>
+				<div class="login__registro__datos__ingresar">
+					
+					{{ form.first_name }}
+					{{ form.first_name.errors }}
+				</div>
+				<div class="login__registro__datos__ingresar">
+
+					{{ form.last_name }}
+					{{ form.last_name.errors }}
+				</div>
+
+				<div class="login__registro__datos__ingresar">
+
+					{{ form.password }}
+					{{ form.password.errors }}
+				</div>
+
+				<div class="login__registro__datos__ingresar">
+
+					{{ form.email }}
+					{{ form.email.errors }}
+				</div>
+
+
+				<button type="submit" class="login__registro__datos__boton">Registrarse</button>
+			</form>
+		</section>
+
+  	</div>
+{% endblock content %}
+
