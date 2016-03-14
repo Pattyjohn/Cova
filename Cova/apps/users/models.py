@@ -23,13 +23,14 @@ class UserManager(BaseUserManager, models.Manager):
     def create_user(self,username,email,password=None,**extra_fields):
         return self._create_user(username,email,password, False,False,**extra_fields)
 
-    def create_user(self,username,email,password=None,**extra_fields):
+    def create_superuser(self,username,email,password=None,**extra_fields):
         return self._create_user(username,email,password, True,True,**extra_fields)
 
 class User(AbstractUser):
-    is_medical = models.BooleanField(default=False)
-    
+    is_medical = models.BooleanField(default=False)    
     is_patient = models.BooleanField(default=False)
+    num_cole=models.CharField(max_length=64, default=0)
+    num_hist=models.CharField(max_length=64, default=0)
 
     class Meta:
         db_table = 'users_db'
