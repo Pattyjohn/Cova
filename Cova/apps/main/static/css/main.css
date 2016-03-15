@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+.logo:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
@@ -67,6 +73,13 @@ input {
   cursor: pointer;
 }
 
+.principal__titulo {
+  display: inline-block;
+   margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
 /* Cabecera */
 .cabecera {
@@ -92,6 +105,23 @@ input {
   border-radius: 2px;
   padding: .3em .9em .3em .9em;
   cursor: pointer;
+}
+
+.menu__item_correo {
+  
+  margin-top: .5em;
+  margin-right: .5em;
+  margin-left: .5em;
+  border: 1px solid;
+  border-radius: 2px;
+  padding: .3em .9em .3em .9em;
+  cursor: pointer;
+ 
+}
+
+.menu__item_correo_texto {
+
+  color: #81DAF5
 }
 .menu__item_bienvenida{
   display: inline-block;
@@ -302,7 +332,18 @@ input {
   text-align: center;
 }
 
+
+.formulario_correo {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 .login__registro__datos {
+  text-align: center;
+}
+
+.formulario_correo__datos {
   text-align: center;
 }
 
@@ -311,6 +352,14 @@ input {
 }
 
 .login__registro__datos__ingresar input {
+  width : 20em;
+}
+
+.formulario_correo__datos__ingresar {
+  margin: 1em 0;
+}
+
+.formulario_correo__datos__ingresar input {
   width : 20em;
 }
 

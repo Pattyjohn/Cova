@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="contenedor">
+
+		<h2 class="formulario_correo">
+			Envío de correo
+		</h2>
+		<section class="formulario_correo__datos">
+			<form method="POST"> 
+				{% csrf_token %}
+				
+				<select id="deslpegable_email" name="provincia">
+				    <option value="" selected="selected">- Destinatario -</option>   
+						{% if user.is_patient %}
+						    {%for user in medical %}
+						    	<option>{{user.email}}</option>
+					    	{% endfor %}
+			    		{% endif%}
+
+						{% if user.is_medical %}
+						    {%for user in patient %}
+						    	<option>{{user.email}}</option>
+					    	{% endfor %}
+			    		{% endif%}
+				    	
+				    	
+
+			    	 
+					  
+				
+				</select>
+ 
+
+				<div class="formulario_correo__datos__ingresar">
+					
+					{{ form.subject }}
+					{{ form.subject.errors }}
+				</div>
+				<div class="formulario_correo__datos__ingresar">
+					
+					{{ form.message }}
+					
+				</div>
+				
+
+
+				<div class="formulario_correo__datos__ingresar">
+
+					{{ form.sender }}
+					
+				</div>
+
+				
+
+
+				<button type="submit" class="login__registro__datos__boton">Enviar correo</button>
+			</form>
+		</section>
+
+  	</div>
+
+
+{% endblock content %}

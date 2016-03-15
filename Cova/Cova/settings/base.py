@@ -28,6 +28,7 @@ DJANGO_APPS=[
 LOCAL_APPS=[
     'apps.main',
     'apps.users',
+    'apps.message',
 ]
 THIRD_PARTY_APPS=[
 

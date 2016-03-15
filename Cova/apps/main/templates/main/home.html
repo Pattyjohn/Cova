@@ -2,25 +2,22 @@
 
 {% block content %}
 	<section class="principal">
-
+	{% if  user.is_authenticated %}
 		<div class="contenedor">
 
-			<!-- <h1 class="principal__titulo">Películas</h1>
-			<span class="principal__subtitulo">Encuentra las mejores películas que deseas.</span>
- -->
+			 <h1 class="principal__titulo">Correo electrónico </h1>
+			<li class="menu__item"><a class="menu__item_correo_texto" href="{% url 'message:email' %}">Acceder</a></li>
+
+ 	</div>
+ 	{%endif%}
 			<div class="libros">
 
-				<article class="libro">
-<!-- 
-					<img src="/static/img/jurassic.jpg" alt="" class="libro__img">
-					<div class="libro__sombra">
+<!-- 			
+				{%for user in medical %}
+					{{user.email}}
+				{% endfor %} -->
 
-						<h3 class="libro__titulo">Jurassic World</h3>
-						<span class="libro__autor">Acción</span>
 
-					</div>
-				</article> -->
-			</div>
 		</div>
 	</section>
 {% endblock content %}
